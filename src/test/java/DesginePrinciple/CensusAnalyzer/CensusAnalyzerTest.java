@@ -17,7 +17,7 @@ public class CensusAnalyzerTest
   }
 	
 	@Test
-	public void givenIndiaCensusData_WithWrongFile_ShoulThrewException() throws IOException {
+	public void given_IndiaCensusData_WithWrongFile_ShoulThrewException() throws IOException {
 		try {
 			CensusAnalyzer censusAnalyZer = new CensusAnalyzer();
 			ExpectedException exceptionRule = ExpectedException.none();
