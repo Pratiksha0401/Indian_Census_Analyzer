@@ -42,5 +42,16 @@ public class CensusAnalyzerTest
 		}
 	}
 	
-	
+	@Test
+	public void given_IndiaCensusData_WithCorrectFile_ButWrongDelimiter_ShoulThrewException() throws IOException{
+		try {
+			CensusAnalyzer censusAnalyZer = new CensusAnalyzer();
+			ExpectedException exceptionRule = ExpectedException.none();
+			exceptionRule.expect(IOException.class);
+			censusAnalyZer.loadIndiaCensusDataFile(INDIA_CENSUS_CSV_FILE_PATH);
+		} catch(CensusAnalyzerException e) {
+			Assert.assertEquals(CensusAnalyzerException.ExceptionType.UNABLE_TO_PARSE, e.type);
+		}
+	}
+		
 }
