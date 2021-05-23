@@ -11,7 +11,7 @@ public class CensusAnalyzerTest
 	private static final String WRONG_CENSUS_CSV_FILE_PATH = "IndiaCensus.csv";
 	private static final String WRONG_CENSUS_FILE_TYPE_PATH = "./IndiaCensus.pdf";
 	
-	private final String INDIAN_STATE_CODE_CSV_FILE_PATH = "./IndiaCensus.csv";
+	private final String INDIAN_STATE_CODE_CSV_FILE_PATH = "./StateCodes.csv";
 	
 	//Indian Census analyzer tests
 	@Test
