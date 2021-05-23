@@ -58,5 +58,12 @@ public class CensusAnalyzerTest
 	}
 	
 	
+	//State codes analyzer tests
+		@Test
+		public void givenStateCodeCSVFileReturnsCorrectNumOfRecords() throws IOException, CensusAnalyzerException {
+			CensusAnalyzer statecodeAnalyZer = new CensusAnalyzer();
+			int numOfRecords = statecodeAnalyZer.loadDataFromCSVFile(INDIAN_STATE_CODE_CSV_FILE_PATH);
+			Assert.assertEquals(1, numOfRecords);
+		}
 		
 }

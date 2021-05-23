@@ -2,7 +2,7 @@ package DesginePrinciple.CensusAnalyzer;
 
 import com.opencsv.bean.CsvBindByName;
 
-public class IndiaStateCode {
+public class IndianStateCode {
 	
 	@CsvBindByName(column = "StateName", required = true)
 	public String stateName;
