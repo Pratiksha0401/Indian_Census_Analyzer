@@ -17,7 +17,7 @@ import com.opencsv.bean.CsvToBeanBuilder;
 
 public class CensusAnalyzer 
 {
-	public int loadIndiaCensusData(String csvFilePath) throws IOException, CensusAnalyzerException {
+	public int loadDataFromCSVFile(String csvFilePath) throws IOException, CensusAnalyzerException {
 		try(Reader reader = Files.newBufferedReader(Paths.get(csvFilePath));)  {
 			CsvToBeanBuilder<IndiaCensusCSV> csvToBeanBuilder = new CsvToBeanBuilder<>(reader);
 			csvToBeanBuilder.withType(IndiaCensusCSV.class);
