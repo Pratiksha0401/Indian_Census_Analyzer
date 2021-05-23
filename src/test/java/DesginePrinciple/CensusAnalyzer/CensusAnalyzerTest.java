@@ -12,6 +12,7 @@ public class CensusAnalyzerTest
 	private static final String WRONG_CENSUS_FILE_TYPE_PATH = "./IndiaCensus.pdf";
 	
 	private final String INDIAN_STATE_CODE_CSV_FILE_PATH = "./StateCodes.csv";
+	private static final String WRONG_STATE_CODE_CSV_FILE_PATH = "StateCodes.csv";
 	
 	//Indian Census analyzer tests
 	@Test
@@ -66,4 +67,16 @@ public class CensusAnalyzerTest
 			Assert.assertEquals(1, numOfRecords);
 		}
 		
+		
+		@Test
+		public void given_StateCodesData_WithWrongFile_ShoulThrewException() throws IOException {
+			try {
+				CensusAnalyzer statecodeAnalyZer = new CensusAnalyzer();
+				ExpectedException exceptionRule = ExpectedException.none();
+				exceptionRule.expect(CensusAnalyzerException.class);
+				statecodeAnalyZer.loadDataFromCSVFile(WRONG_STATE_CODE_CSV_FILE_PATH);
+			} catch(CensusAnalyzerException e) {
+				Assert.assertEquals(CensusAnalyzerException.ExceptionType.CSV_FILE_PROBLEM, e.type);
+			}
+		}
 }
