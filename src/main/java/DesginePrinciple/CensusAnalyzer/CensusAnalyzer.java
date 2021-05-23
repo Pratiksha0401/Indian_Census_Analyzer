@@ -38,7 +38,7 @@ public class CensusAnalyzer
 	
 	
 	@SuppressWarnings("deprecation")
-	public boolean loadIndiaCensusDataFile(String csvFilePath) throws FileNotFoundException, IOException, CensusAnalyzerException {
+	public boolean loadDataFromFile(String csvFilePath) throws FileNotFoundException, IOException, CensusAnalyzerException {
 		CSVReader reader=null;
 		try{
 			reader= new CSVReader(new FileReader(csvFilePath),'.');
